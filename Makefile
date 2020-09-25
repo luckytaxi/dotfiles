@@ -9,7 +9,6 @@ dotfiles: ## Installs the dotfiles.
 	cd "$(dirname $0)/..";
 
 	for file in $(shell find $(CURDIR) -name "*.symlink" -not -path "*.git*"); do \
-		echo $$file; \
-		f=$$(basename $$file); \
+        f=$$(basename $$file); \
         ln -sfn $$file $(HOME)/.$${f%.*}; \
-	done
+    done
